@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer, { rootSaga } from 'lib/redux';
+import { createLogger } from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
+import { BrowserRouter } from "react-router-dom";
+import App from 'App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const logger = createLogger(); //로거 생성
+const sagaMiddleware = createSagaMiddleware();  //사가 미들웨어 생성
+
+// 스토어 생성
+const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(logger, sagaMiddleware)) //크롬 브라우저에 Redux DevTools 설치 필요
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+sagaMiddleware.run(rootSaga);
+
+ReactDOM.render(
+    <React.StrictMode>
+      <Provider store = {store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
+

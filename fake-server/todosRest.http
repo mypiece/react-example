@@ -1,0 +1,48 @@
+### id는 자동할당 된다.
+POST http://localhost:3001/todos
+Content-Type: application/json
+
+{
+  "text": "test",
+  "done": false
+}
+
+###
+GET http://localhost:3001/todos
+
+### _sort, _order 파라미터를 통해 정렬된 데이터를 읽어올 수 있다.
+GET http://localhost:3001/todos?_sort=id&_order=DESC
+
+###
+GET http://localhost:3001/todos?id=1
+
+### >= 연산자는 _gte= 를 활용한다.
+GET http://localhost:3001/todos?id_gte=2
+
+### <= 연산자는 _lte= 를 활용한다.
+GET http://localhost:3001/todos?id_lte=2
+
+### != 연산자는 _ne= 를 활용한다.
+GET http://localhost:3001/todos?id_ne=2
+
+### 읽어올 데이터 제한은 _limit 파라미터를 지정하면 된다.
+GET http://localhost:3001/todos?_limit=2
+
+###
+PATCH http://localhost:3001/todos/4
+Content-Type: application/json
+
+{
+  "done": true
+}
+
+###
+PUT http://localhost:3001/todos/4
+Content-Type: application/json
+
+{
+  "done": true
+}
+
+###
+DELETE http://localhost:3001/todos/4

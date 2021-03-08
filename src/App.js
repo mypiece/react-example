@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch} from "react-router-dom";
+import loadable from "@loadable/component";
+import Loader from 'components/Loader';
 
-function App() {
+const Page1 = loadable(
+    () => import('pages/FirstPage'),
+    {fallback: <Loader />});
+
+const Page2 = loadable(
+    () => import('pages/SecondPage'),
+    {fallback: <Loader />});
+
+const NotFound = loadable(
+    () => import('components/NotFound'),
+    {fallback: <Loader />});
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Switch>
+        <Route path={["/", "/page1", "/page1/:menu"]} component={Page1} exact={true}/>
+        <Route path={["/page2", "/page2"]} component={Page2}/>
+        <Route
+            render = {
+              ({location}) => (
+                  <NotFound pathname={location.pathname} />
+              )
+            }
+        />
+      </Switch>
   );
 }
 
