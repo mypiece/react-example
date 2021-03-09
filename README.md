@@ -34,7 +34,6 @@
    yarn start
    ```
 
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img_5.png](img_5.png)
 
 ## **더 자세한 내용은 [위키](https://wiki.daumkakao.com/pages/viewpage.action?pageId=745796758) 를 참고하도록 한다.**
