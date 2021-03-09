@@ -15,10 +15,10 @@ const Page1Menu = () => {
       <div>
         <ul>
           <li onMouseOver={onMouseOver}>
-            <Link to="/page1/counter">카운터</Link>
+            <Link to="/page1/counter">Counter</Link>
           </li>
           <li>
-            <Link to="/page1/todos">할일들</Link>
+            <Link to="/page1/todos">Todos</Link>
           </li>
         </ul>
       </div>
