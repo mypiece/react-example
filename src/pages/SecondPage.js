@@ -6,7 +6,7 @@ const SecondPage = () => {
   ImportResource('css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css');
 
   return (
-      <div>두번째 페이지</div>
+      <h1>두번째 페이지</h1>
   );
 }
 
