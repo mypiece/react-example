@@ -2,11 +2,11 @@ import {Route, Switch} from "react-router-dom";
 import loadable from "@loadable/component";
 import Loader from 'components/Loader';
 
-const Page1 = loadable(
+const FirstPage = loadable(
     () => import('pages/FirstPage'),
     {fallback: <Loader />});
 
-const Page2 = loadable(
+const SecondPage = loadable(
     () => import('pages/SecondPage'),
     {fallback: <Loader />});
 
@@ -18,8 +18,8 @@ const App = () => {
 
   return (
       <Switch>
-        <Route path={["/", "/page1", "/page1/:menu"]} component={Page1} exact={true}/>
-        <Route path={["/page2", "/page2"]} component={Page2}/>
+        <Route path={["/", "/page1", "/page1/:menu"]} component={FirstPage} exact={true}/>
+        <Route path={["/page2", "/page2"]} component={SecondPage}/>
         <Route
             render = {
               ({location}) => (

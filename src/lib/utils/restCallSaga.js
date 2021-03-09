@@ -1,12 +1,6 @@
 import {call, delay, put} from 'redux-saga/effects';
 import { startLoading, finishLoading } from 'lib/redux/loading';
 
-export const createApiActionTypes = type => {
-  const SUCCESS = `${type}_SUCCESS`;
-  const FAILURE = `${type}_FAILURE`;
-  return [type, SUCCESS, FAILURE];
-};
-
 const restCallSaga = (type, request) => {
   const SUCCESS = `${type}_SUCCESS`;
   const FAILURE = `${type}_FAILURE`;

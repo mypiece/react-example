@@ -23,7 +23,7 @@ const TodoInput = React.memo(({input, onChangeInput, onInsertTodo, inputLoading}
   );
 });
 
-const TodoItem = ({ todo, onToggleTodo, onRemoveTodo }) => {
+const TodoItem = React.memo( ({ todo, onToggleTodo, onRemoveTodo }) => {
 
   return (
       <div>
@@ -39,7 +39,7 @@ const TodoItem = ({ todo, onToggleTodo, onRemoveTodo }) => {
         <button onClick={() => onRemoveTodo(todo.id)}>삭제</button>
       </div>
   );
-};
+});
 
 const TodoList = React.memo(({todos, onToggleTodo, onRemoveTodo, listLoading}) => {
 

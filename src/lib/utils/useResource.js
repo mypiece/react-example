@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const ImportResource = (resourceType, resourceUrl) => {
+const useResource = (resourceType, resourceUrl) => {
   useEffect(() => {
     let element;
     switch(resourceType){
@@ -25,4 +25,4 @@ const ImportResource = (resourceType, resourceUrl) => {
   }, [resourceType, resourceUrl]);
 }
 
-export default ImportResource;
+export default useResource;

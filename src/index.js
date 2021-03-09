@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
+import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer, { rootSaga } from 'lib/redux';
-import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { BrowserRouter } from "react-router-dom";
 import App from 'App';
 
 const logger = createLogger(); //로거 생성

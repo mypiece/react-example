@@ -4,7 +4,6 @@ import todos, { todosSaga } from 'lib/redux/todos';
 import loading from 'lib/redux/loading';
 
 // 리듀서를 통합하는 루트 리듀서를 만든다.
-// 스토어는 하나만 생성할 수 있는데 그 때 사용된다.
 const rootReducer = combineReducers({
   todos,
   loading
