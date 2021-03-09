@@ -5,7 +5,7 @@
 3. 리액트 라우터로 라우팅 처리
 4. Loadable Components 로 코드 스플리팅 처리
 
-###로컬구동방법
+### 로컬구동방법
 1. nvm 설치
     ```
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
@@ -37,4 +37,4 @@
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
-##**더 자세한 내용은 [위키](https://wiki.daumkakao.com/pages/viewpage.action?pageId=745796758) 를 참고하도록 한다.**
+## **더 자세한 내용은 [위키](https://wiki.daumkakao.com/pages/viewpage.action?pageId=745796758) 를 참고하도록 한다.**
