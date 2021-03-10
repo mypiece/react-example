@@ -24,8 +24,6 @@ const CREATE_TODO_SUCCESS = 'todos/CREATE_TODO_SUCCESS'; // 새로운 todo 등�
 const REMOVE_TODO = 'todos/REMOVE_TODO'; // todo 삭제
 const REMOVE_TODO_SUCCESS = 'todos/REMOVE_TODO_SUCCESS'; // todo 제거 성공
 
-
-
 // 액션 생성 함수
 export const changeInput = createAction(CHANGE_INPUT, input => input);
 export const toggle = createAction(TOGGLE_TODO, id => id);
@@ -48,7 +46,6 @@ export function* todosSaga(){
   yield takeLatest(CREATE_TODO, createTodosSaga);
   yield takeLatest(REMOVE_TODO, removeTodosSaga);
 }
-
 
 // 리듀서 함수
 const todos = handleActions(
