@@ -47,7 +47,7 @@ yarn add @loadable/component
 yarn add styled-components
 ```
 
-###import 절대경로로 지정하기
+### import 절대경로로 지정하기  
 리액트에서 다른 js 파일을 import 할때 기본적으로 아래와 같이 상대경로로 지정해야 한다.
 ```
 import { startLoading, finishLoading } from '../../modules/loading';
