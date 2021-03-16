@@ -18,7 +18,7 @@ const TodoInput = React.memo(({input, onChangeInput, onInsertTodo, inputLoading}
           :
           <>
             <input value={input} onChange={(e) => onChangeInput(e.target.value)} />
-            <button type="botton" onClick={insert}>등록</button>
+            <button type="button" onClick={insert}>등록</button>
           </>
   );
 });
